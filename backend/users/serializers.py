@@ -1,6 +1,8 @@
 from djoser.serializers import UserCreateSerializer
 from rest_framework import serializers
 
+from recipes.models import Follow
+
 from .models import CustomUser
 
 
@@ -24,8 +26,8 @@ class UserSerializer(serializers.ModelSerializer):
     def check_if_is_subscribed(self, user):
         current_user = self.context['request'].user
         other_user = user.following.all()
-        if len(other_user) == 0:
+        if other_user.count() == 0:
             return False
-        if current_user.id in [i.user.id for i in other_user]:
+        if Follow.objects.filter(user=user, author=current_user).exists():
             return True
         return False
