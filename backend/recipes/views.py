@@ -10,7 +10,7 @@ from rest_framework.views import APIView
 
 from .filters import RecipeFilter
 from .models import (CustomUser, Favorite, Follow, Ingredient,
-                     IngredientInRecipe, Recipe, PurchaseList, Tag)
+                     IngredientInRecipe, PurchaseList, Recipe, Tag)
 from .permissions import IsAuthor
 from .serializers import (AddFavouriteRecipeSerializer, CreateRecipeSerializer,
                           IngredientSerializer, ListRecipeSerializer,
