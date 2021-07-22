@@ -1,12 +1,7 @@
 name: Foodgram-project workflow
 
-on: 
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master, test, dev
+on: [push]
+
 jobs:
   tests:
     runs-on: ubuntu-latest
