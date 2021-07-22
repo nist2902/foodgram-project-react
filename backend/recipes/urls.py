@@ -14,11 +14,11 @@ urlpatterns = [
      path('', include(router.urls)),
      path('users/subscriptions/', showfollows, name='users_subs'),
      path('users/<int:user_id>/subscribe/',
-         FollowViewSet.as_view(), name='subscribe'),
+          FollowViewSet.as_view(), name='subscribe'),
      path('recipes/<int:recipe_id>/favorite/',
-         FavouriteViewSet.as_view(), name='add_recipe_to_favorite'),
+          FavouriteViewSet.as_view(), name='add_recipe_to_favorite'),
      path('recipes/<int:recipe_id>/shopping_cart/',
-         PurchaseListViewSet.as_view(), name='add_recipe_to_shopping_cart'),
+          PurchaseListViewSet.as_view(), name='add_recipe_to_shopping_cart'),
      path('recipes/download_shopping_cart/',
-         DownloadShoppingCart.as_view(), name='dowload_shopping_cart')
+          DownloadShoppingCart.as_view(), name='dowload_shopping_cart')
 ]

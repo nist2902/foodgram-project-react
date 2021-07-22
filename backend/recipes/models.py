@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.html import format_html
 from users.models import CustomUser
 
 
@@ -82,7 +81,7 @@ class Recipe(models.Model):
         auto_now_add=True,
         verbose_name='Дата публикации'
     )
-    
+
     class Meta:
         ordering = ['-pub_date']
         verbose_name = 'Рецепт'
@@ -146,7 +145,6 @@ class Follow(models.Model):
         return f'{self.user} - {self.author}'
 
 
-
 class PurchaseList(models.Model):
     user = models.ForeignKey(
         CustomUser,
@@ -168,7 +166,7 @@ class PurchaseList(models.Model):
     class Meta:
         verbose_name = 'Список для покупок'
         verbose_name_plural = 'Списки для покупок'
-    
+
     def __str__(self):
         return f'{self.user}: {self.recipe}'
 
@@ -194,6 +192,6 @@ class Favorite(models.Model):
     class Meta:
         verbose_name = 'Избранное'
         verbose_name_plural = 'Избранное'
-    
+
     def __str__(self):
         return f'{self.user}: {self.recipe}'
