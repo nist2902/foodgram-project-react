@@ -1,4 +1,5 @@
 from django.db import models
+
 from users.models import CustomUser
 
 
@@ -74,7 +75,6 @@ class Recipe(models.Model):
     tags = models.ManyToManyField(
         Tag,
         blank=True,
-        null=True,
         verbose_name='Тэги'
     )
     pub_date = models.DateTimeField(

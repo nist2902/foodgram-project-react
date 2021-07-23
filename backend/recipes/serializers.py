@@ -62,10 +62,7 @@ class ListRecipeUserSerializer(serializers.ModelSerializer):
         other_user = user.following.all()
         if other_user.count() == 0:
             return False
-        if Follow.objects.filter(user=user, author=current_user).exists():
-            return True
-        return False
-
+        return Follow.objects.filter(user=user, author=current_user).exists()
 
 class IngredientInRecipeSerializer(serializers.ModelSerializer):
 
@@ -168,10 +165,7 @@ class ShowFollowersSerializer(serializers.ModelSerializer):
             return False
         if other_user.count() == 0:
             return False
-        if Follow.objects.filter(user=user, author=current_user).exists():
-            return True
-        return False
-
+        return Follow.objects.filter(user=user, author=current_user).exists()
 
 class ShowIngredientsSerializer(serializers.ModelSerializer):
 
