@@ -64,6 +64,7 @@ class ListRecipeUserSerializer(serializers.ModelSerializer):
             return False
         return Follow.objects.filter(user=user, author=current_user).exists()
 
+
 class IngredientInRecipeSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -166,6 +167,7 @@ class ShowFollowersSerializer(serializers.ModelSerializer):
         if other_user.count() == 0:
             return False
         return Follow.objects.filter(user=user, author=current_user).exists()
+
 
 class ShowIngredientsSerializer(serializers.ModelSerializer):
 
