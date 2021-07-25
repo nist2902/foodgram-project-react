@@ -2,15 +2,13 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'fdsdsd&&#HSJ')
+SECRET_KEY = 'SECRET_KEY'
 
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
-    'users',
-    'recipes',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -20,7 +18,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters',
-    'djoser'
+    'users',
+    'api',
+    'djoser',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +52,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
-
 
 DATABASES = {
     'default': {
@@ -97,16 +96,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 REST_FRAMEWORK = {
-    'DEFAULT_VERSIONING_CLASS':
-        'rest_framework.versioning.QueryParameterVersioning',
+    "DEFAULT_VERSIONING_CLASS":
+        "rest_framework.versioning.QueryParameterVersioning",
 
-    'DEFAULT_VERSION': 'v1.0.0',
+    "DEFAULT_VERSION": "v1.0.0",
 
-    'ALLOWED_VERSIONS': 'v1.0.0',
+    "ALLOWED_VERSIONS": "v1.0.0",
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
