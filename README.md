@@ -16,7 +16,7 @@
 6. Соберите статику внутри докера: ```sudo docker-compose exec web python manage.py collectstatic --no-input``` 
 
 # Workflow checker 
-![Checker workflow](https://github.com/nist2902/foodgram-project-react/actions/workflows/main.yml/badge.svg) 
+![Checker workflow](https://github.com/nist2902/foodgram-project-react/actions/workflows/main2.yml/badge.svg) 
 
 # Адрес на сервере 
 http://foodgrampraktikum.ml/
