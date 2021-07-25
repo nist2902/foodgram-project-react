@@ -23,5 +23,5 @@ http://foodgrampraktikum.ml/
 
 # Данные для входа в админ-панель:
 Адрес: http://foodgrampraktikum.ml/admin
-Mail: admin@admin.com
+Mail: admin@admin.ru
 Пароль: admin
